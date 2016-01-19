@@ -8,9 +8,7 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 
-import java.io.IOException;
 import java.io.InputStream;
-import java.net.URISyntaxException;
 import java.text.MessageFormat;
 import java.util.Map;
 
@@ -43,9 +41,10 @@ public class ApacheHttpClient implements SimpleHttpClient {
                 InputStream content = res.getEntity().getContent();
                 return IOUtils.toString(content);
             }
-        } catch (URISyntaxException | IOException e) {
+        } catch (Exception e) {
             System.err.println(MessageFormat.format("Error occurred while making request to URL: {0}, " +
                     "with params: {1}", url, params));
+            e.printStackTrace(System.err);
             return "";
         }
     }
