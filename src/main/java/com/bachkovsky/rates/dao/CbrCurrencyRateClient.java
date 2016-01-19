@@ -33,11 +33,10 @@ public class CbrCurrencyRateClient implements CurrencyRatesRepository {
 
     @Override
     public Optional<CurrencyRate> getCurrencyRate(String code, LocalDate date) {
-        return Optional.ofNullable(getCurrencyRates(date)
+        return getCurrencyRates(date)
                 .stream()
                 .filter(cbrRate -> code.equals(cbrRate.getCode()))
-                .findFirst()
-                .orElse(null));
+                .findAny();
     }
 
     @Override
