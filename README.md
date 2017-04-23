@@ -39,9 +39,9 @@ API Приложения
 
 ### Примеры запросов
 
-    GET http://example.com/currency/api/rate/USD
+    GET http://localhost:8080/api/rate/USD
 
-    GET http://example.com/currency/api/rate/USD/2015-09-24
+    GET http://localhost:8080/api/rate/USD/2015-09-24
 
 
 ### Пример ответа
@@ -58,7 +58,7 @@ API Приложения
 Сборка и запуск
 ---------------
 
-Из корневой директории проекта ругайтесь в консоль:
+Из корневой директории проекта выполнить команды:
 
 ### Сборка при помощи Gradle wrapper:
     gradlew build

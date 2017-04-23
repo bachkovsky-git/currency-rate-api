@@ -7,7 +7,7 @@ import java.time.LocalDate;
 
 @ResponseStatus(HttpStatus.NOT_FOUND)
 class RateNotFoundException extends RuntimeException {
-    public RateNotFoundException(String code, LocalDate date) {
+    RateNotFoundException(String code, LocalDate date) {
         super("Could not find rate: code='" + code + "', date='" + date + "'");
     }
 }

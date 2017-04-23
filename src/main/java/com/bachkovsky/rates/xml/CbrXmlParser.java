@@ -5,6 +5,7 @@ import com.bachkovsky.rates.entity.CurrencyRate;
 import javax.validation.constraints.NotNull;
 import java.util.List;
 
+@FunctionalInterface
 public interface CbrXmlParser {
 
     @NotNull

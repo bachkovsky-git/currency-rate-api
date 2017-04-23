@@ -46,17 +46,17 @@ public class CurrencyRateController {
         return ratesRepository.getCurrencyRate(code, date).orElseThrow(() -> new RateNotFoundException(code, date));
     }
 
-    private LocalDate tomorrow() {
+    private static LocalDate tomorrow() {
         return LocalDate.now().plusDays(1);
     }
 
-    private void validateCode(String code) throws ApiException {
+    private static void validateCode(String code) throws ApiException {
         if (!CURRENCY_CODE_PATTERN.matcher(code).matches()) {
             throw new ApiException("code", code);
         }
     }
 
-    private LocalDate validateDate(String stringDate) throws ApiException {
+    private static LocalDate validateDate(String stringDate) throws ApiException {
         try {
             return LocalDate.parse(stringDate, DateTimeFormatter.ISO_LOCAL_DATE);
         } catch (DateTimeParseException e) {

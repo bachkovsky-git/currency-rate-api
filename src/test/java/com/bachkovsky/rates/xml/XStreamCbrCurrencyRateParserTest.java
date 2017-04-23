@@ -26,10 +26,9 @@ public class XStreamCbrCurrencyRateParserTest {
                 FileUtils.getFile("src", "test", "resources", "rates.xml")));
         assertNotNull(rates);
         assertEquals(35, rates.size());
-        Optional<CurrencyRate> usdRate = rates
-                .stream()
-                .filter(rate -> "USD".equals(rate.getCode()))
-                .findFirst();
+        Optional<CurrencyRate> usdRate = rates.stream()
+                                              .filter(rate -> "USD".equals(rate.getCode()))
+                                              .findFirst();
         assertTrue(usdRate.isPresent());
         assertEquals("30,7194", usdRate.get().getRate());
         assertEquals(LocalDate.of(2012, 12, 22), usdRate.get().getDate());

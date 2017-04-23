@@ -3,22 +3,22 @@ package com.bachkovsky.rates.xml;
 import java.time.LocalDate;
 import java.util.List;
 
-class CbrCurrencyRates {
+class CBRCurrencyRates {
 
     private final LocalDate date;
 
-    private final List<CbrCurrencyRate> currencyRates;
+    private final List<CBRCurrencyRate> currencyRates;
 
-    public CbrCurrencyRates(List<CbrCurrencyRate> currencyRates, LocalDate date) {
+    CBRCurrencyRates(List<CBRCurrencyRate> currencyRates, LocalDate date) {
         this.date = date;
         this.currencyRates = currencyRates;
     }
 
-    public List<CbrCurrencyRate> getCurrencyRates() {
+    List<CBRCurrencyRate> getCurrencyRates() {
         return currencyRates;
     }
 
-    public LocalDate getDate() {
+    LocalDate getDate() {
         return date;
     }
 }

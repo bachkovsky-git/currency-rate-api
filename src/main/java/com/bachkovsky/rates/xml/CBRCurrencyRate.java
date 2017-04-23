@@ -1,6 +1,6 @@
 package com.bachkovsky.rates.xml;
 
-class CbrCurrencyRate {
+class CBRCurrencyRate {
 
     private final Integer numericCode;
 
@@ -12,7 +12,7 @@ class CbrCurrencyRate {
 
     private final String rate;
 
-    public CbrCurrencyRate(Integer numericCode, String charCode, Integer nominal, String name, String rate) {
+    CBRCurrencyRate(Integer numericCode, String charCode, Integer nominal, String name, String rate) {
         this.numericCode = numericCode;
         this.charCode = charCode;
         this.nominal = nominal;
@@ -20,23 +20,23 @@ class CbrCurrencyRate {
         this.rate = rate;
     }
 
-    public Integer getNumericCode() {
+    Integer getNumericCode() {
         return numericCode;
     }
 
-    public String getCharCode() {
+    String getCharCode() {
         return charCode;
     }
 
-    public Integer getNominal() {
+    Integer getNominal() {
         return nominal;
     }
 
-    public String getName() {
+    String getName() {
         return name;
     }
 
-    public String getRate() {
+    String getRate() {
         return rate;
     }
 }

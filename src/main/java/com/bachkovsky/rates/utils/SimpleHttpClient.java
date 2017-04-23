@@ -3,6 +3,7 @@ package com.bachkovsky.rates.utils;
 import javax.validation.constraints.NotNull;
 import java.util.Map;
 
+@FunctionalInterface
 public interface SimpleHttpClient {
 
     @NotNull

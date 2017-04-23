@@ -7,14 +7,13 @@ import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 import java.util.stream.Collectors;
-
-import static java.util.stream.Collectors.toList;
 
 public class CurrencyRatesCache implements CurrencyRatesRepository {
 
@@ -28,8 +27,8 @@ public class CurrencyRatesCache implements CurrencyRatesRepository {
                     @Override
                     public Map<String, CurrencyRate> load(LocalDate date) throws Exception {
                         return repository.getCurrencyRates(date)
-                                .stream()
-                                .collect(Collectors.toMap(CurrencyRate::getCode, Function.identity()));
+                                         .stream()
+                                         .collect(Collectors.toMap(CurrencyRate::getCode, Function.identity()));
                     }
                 });
     }
@@ -41,8 +40,6 @@ public class CurrencyRatesCache implements CurrencyRatesRepository {
 
     @Override
     public List<CurrencyRate> getCurrencyRates(LocalDate dateTime) {
-        return cache.getUnchecked(dateTime).values()
-                .stream()
-                .collect(toList());
+        return new ArrayList<>(cache.getUnchecked(dateTime).values());
     }
 }
