@@ -46,7 +46,8 @@ public class CurrencyRateController {
         return ratesRepository.getCurrencyRate(code, date).orElseThrow(() -> new RateNotFoundException(code, date));
     }
 
-    private static LocalDate tomorrow() {
+    @SuppressWarnings("MethodMayBeStatic")
+    private LocalDate tomorrow() {
         return LocalDate.now().plusDays(1);
     }
 
